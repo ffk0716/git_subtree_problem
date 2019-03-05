@@ -7,7 +7,7 @@ pushd sub
 git init
 echo is sub > sub.txt
 git add sub.txt
-git commit -am "init sub"
+git commit -am "sub: init"
 popd
 
 # build top repo
@@ -16,7 +16,7 @@ pushd top
 git init
 echo is top > top.txt 
 git add top.txt
-git commit -am "init top"
+git commit -am "top: init"
 popd
 
 
@@ -32,7 +32,7 @@ git subtree add -P sub_d/core ../sub master
 # someone do something in master
 git checkout master
 echo something >> top.txt
-git commit -am "modified: top.txt, add something"
+git commit -am "top: modify top.txt, add something"
 
 # merge subtree commit
 git merge add_sub --no-edit
